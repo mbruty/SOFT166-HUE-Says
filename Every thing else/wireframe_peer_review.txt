@@ -1,0 +1,4 @@
+The wirefram that Mike has done is very detailed, going into where he is going to put elements of his website and it is clear how they are going to be useful. He has even 
+utilised the built-in bootstrap columns architecture to help outline how his pages are going to be arranged.
+
+-David Wood 10653472
