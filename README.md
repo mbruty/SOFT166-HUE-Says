@@ -7,13 +7,13 @@ Then extract it to your computer and open any file in the **HTML** Folder.
 ![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/lv7-E4kgNeE/0.jpg)(https://www.youtube.com/watch?v=lv7-E4kgNeE
 
 ## The game
-![Game Page](https://liveplymouthac-my.sharepoint.com/personal/michael_bruty_students_plymouth_ac_uk/Documents/gamepage.png?csf=1&e=keP1gB&cid=0b23788c-d4a5-4141-83d5-7d645715a195)
+![Game Page](https://i.imgur.com/6CwrY7z.png)
 Navigate to the game page to get started. Watch the youtube video above to see how to play the game.
 
 ### Settings
 In settings you can change the light you use, change the dificulty and reset the high score
 
-![Game Settings](https://liveplymouthac-my.sharepoint.com/personal/michael_bruty_students_plymouth_ac_uk/Documents/gamesettings.png?csf=1&e=wNtH3C&cid=63835f15-f1ed-46ba-91c3-fe6d3b5da57a)
+![Game Settings](https://i.imgur.com/83qcl25.png)
 The dificulty speeds in ms are as follows:
 
  - Easy : 1100
@@ -42,8 +42,7 @@ The high score for the game will update once you get a squence wrong and the gam
 **Note: None of your data will be saved online OR will be  accessable by any one else**
 
 ## The Lights Page
-Here you can find out how the lights work.
-![enter image description here](https://liveplymouthac-my.sharepoint.com/personal/michael_bruty_students_plymouth_ac_uk/Documents/lightsPage.png?csf=1&e=lAuQQl&cid=30bfc136-84f1-4ade-84dd-b6a6045443f1)
+![Lights page](https://i.imgur.com/4ouQl9D.png)
 
 ### Controling the lights
 
