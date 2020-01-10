@@ -4,7 +4,7 @@ Weclome to the HUE says memory game. To get started please **Click Download**
 Then extract it to your computer and open any file in the **HTML** Folder.
 
 ## Watch how to play the game
-![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/lv7-E4kgNeE/0.jpg)(https://www.youtube.com/watch?v=lv7-E4kgNeE
+![Youtube video](https://img.youtube.com/vi/lv7-E4kgNeE/0.jpg)https://www.youtube.com/watch?v=lv7-E4kgNeE
 
 ## The game
 ![Game Page](https://i.imgur.com/6CwrY7z.png)
