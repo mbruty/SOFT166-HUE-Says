@@ -10,6 +10,9 @@ Then extract it to your computer and open any file in the **HTML** Folder.
 ![Game Page](https://i.imgur.com/6CwrY7z.png)
 Navigate to the game page to get started. Watch the youtube video above to see how to play the game.
 
+To play the game, click the **Start game** button, this will show the sequence, just click the same buttons that light up to win!
+
+Ticking the **Auto Play** box will automatically start the next sequence on completion.
 ### Settings
 In settings you can change the light you use, change the dificulty and reset the high score
 
@@ -56,3 +59,13 @@ This will allow you to control the specific HUE value of a single light.
 The hue value is a number between 0 and 55000.
 
 [Click to find out more about the HUE values](https://community.boomi.com/s/news/aBU1W000000bmFhWAI/what-are-hue-talking-about)
+
+## Web Accessability
+- Colour blindness
+A large problem with creating a colour memory game is that colourblind people cannot use it. I decided to tackle this problem by indicating which button is changing during the sequence, so if you cannot distinguish colours, you'll just have to remember the order that the buttons flash!
+No where is colour exclusively used to show the form of a button, it always has text supporting it.
+
+- Text contrast
+Text contrast is very important, it can stop a visually ipared user from using the website out right. Almost all of the text is black on a white background, which is the best contrast possible. Where text is not black-on-white i.e. on buttons, the contrast is taken in to account and is enough to meet standards.
+- Text size
+The text size isn't as big as it could be for users who are visually impared, but the website works exactly the same when zoomed in upon.
