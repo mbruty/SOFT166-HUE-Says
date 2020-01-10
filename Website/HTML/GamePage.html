@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Profile Home Page -->
+    <title>HUE Says?</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/game.js"></script>
+    <style>
+        table {
+            width: 100%;
+        }
+        td {
+            width: 33.333%;
+            height: 100px;
+            border: 4px solid #222;
+        }
+        td:after {
+            content: '';
+            display: block;
+            margin-top: 100%;
+        }
+    </style>
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto Light", sans-serif}
+    </style>
+
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">HUE Says?</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navBar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="GamePage.html">Game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="About.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Key.html">Lights</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="settingsModalLabel">Game Settings</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="lightsDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        HUE Light to use
+                    </button>
+                    <span class="badge" id="lightBadge">Current Light: 1</span>
+                    <div class="dropdown-menu" aria-labelledby="lightsDropDown">
+                        <button class="dropdown-item" type="button" onclick="light.setLightNumber(1)">Light 1</button>
+                        <button class="dropdown-item" type="button" onclick="light.setLightNumber(2)">Light 2</button>
+                        <button class="dropdown-item" type="button" onclick="light.setLightNumber(3)">Light 3</button>
+                        <button class="dropdown-item" type="button"onclick="light.setLightNumber(4)">Light 4</button>
+                        <button class="dropdown-item" type="button" onclick="light.setLightNumber(5)">Light 5</button>
+                        <button class="dropdown-item" type="button" onclick="light.setLightNumber(6)">Light 6</button>
+                    </div>
+                    <div>
+                        <div class="p-3">
+                            <h5>Difficulty:</h5>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioEasy" value="easyBtn" onclick="difficulty = 'Easy'">
+                                <label class="form-check-label" for="inlineRadio1">Easy</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioMedium" value="mediumBtn" onclick="difficulty = 'Medium'">
+                                <label class="form-check-label" for="inlineRadio2">Medium</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioHard" value="hardBtn" onclick="difficulty = 'Hard'">
+                                <label class="form-check-label" for="inlineRadio2">Hard</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioExtraHard" value="xHardBtn" onclick="difficulty = 'ExtraHard'">
+                                <label class="form-check-label" for="inlineRadio2">Extra Hard</label>
+                            </div>
+                            <div class="btn btn-secondary mt-3" onclick="doc.resetHighScore()">Reset High Score</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="doc.saveSettings()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main">
+    <div class="w3-main">
+        <header id="game">
+
+        </header>
+        <div class="card-columns d-flex justify-content-start m-2">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    HUE Says? Game
+                </div>
+                <div class="card-body">
+                    <div class="pb-3">
+                        <button type="button" class="btn - btn-success" onclick="game.playSequence()" id="playBtn">Start game</button>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Current Score: <b id="currScore" style="right">0</b></li>
+                        <li class="list-group-item">Previous Score <b id="prevHighScore">0</b></li>
+                        <li class="list-group-item">Session High Score <b id="seshHighScore">0</b></li>
+                        <li class="list-group-item">All-time High Score: <b id="highScore">0</b></li>
+                    </ul>
+                    <div class="pl-3 pt-3">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-toggle="toggle" id="autoPlayToggle">
+                                Auto Play
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#settingsModal" onclick="doc.showSettings()">
+                        Game Settings
+                    </button>
+                </div>
+            </div>
+            <div class="card mt-6 col-md-6 p-4" id="lightCard">
+                <table id="LightGrid">
+                    <tr>
+                        <td style="background-color: #8fd4ff" id="0"></td>
+                        <td style="background-color: #8fff8f" id="1"></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #ff8f8f" id="2"></td>
+                        <td style="background-color: #ffd88f" id="3"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div class="card ">
+    <div class="card-body">
+        HUE Says? ©Michael Bruty 2020
+    </div>
+</div>
+</body>
+</html>
