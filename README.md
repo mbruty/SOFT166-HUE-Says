@@ -66,10 +66,27 @@ A large problem with creating a colour memory game is that colourblind people ca
 No where is colour exclusively used to show the form of a button, it always has text supporting it.
 
 - Text contrast
-Text contrast is very important, it can stop a visually ipared user from using the website out right. Almost all of the text is black on a white background, which is the best contrast possible. Where text is not black-on-white i.e. on buttons, the contrast is taken in to account and is enough to meet standards.
+Text contrast is very important, it can stop a visually impaired user from using the website out right. Almost all of the text is black on a white background, which is the best contrast possible. Where text is not black-on-white i.e. on buttons, the contrast is taken in to account and is enough to meet standards.
 - Text size
-The text size isn't as big as it could be for users who are visually impared, but the website works exactly the same when zoomed in upon.
+The text size isn't as big as it could be for users who are visually impaired, but the website works exactly the same when zoomed in upon.
 
+### WCAG1.0
+- Guidelline 1: No audio content included, visual assistance couldn't be given as the game wouldn't work if the user is blind,
+- Guidelline 2: Colour only shows form and text is always used aswell as colour.
+- Guidelline 3: Bootstrap default style sheet is used
+- Guidelline 4: Language is clear under explainations, very little understanding of English is needed to operate the game fully.
+- Guidelline 5: All tables transform and stay together upon resizing.
+- Guidelline 6: The whole website has a dynamic style.
+- Guidelline 7: No changes are time-sensitive on the website.
+- Guidelline 8: There are no embeded UI's.
+- Guidelline 9: The website is designed to be used on any computer and browser and can work on phone sized screens too.
+- Guidelline 10: The only text box is empty, how ever has a clear title on what it is used for.
+- Guidelline 11: Template was from Bootstrap which should use W3C guidelines.
+- Guidelline 12: Context is always shown to the user as indicated by the highlited item on the search bar
+- Guidelline 13: Navigation bar is clear and always accessable.
+- Guidelline 14: Lay-out is clear, clean and simple.
+
+[Guidellines from here](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines)
 ## Supported browsers
 All browsers that can run javascript are supported, Chrome and FireFox have been tested and work as you can see from the video.
 
