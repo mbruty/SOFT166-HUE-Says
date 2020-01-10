@@ -15,40 +15,42 @@ class Game {
     sequence;
     guessCount;
     colours = ['blue', 'green', 'red', 'orange'];
-    coloursHex = ['#0000ff','#00ff22','#ff0800','#ffa200'];
-    origColors = ['#8fd4ff','#8fff8f','#ff8f8f','#ffd88f'];
+    coloursHex = ['#0000ff', '#00ff22', '#ff0800', '#ffa200'];
+    origColors = ['#8fd4ff', '#8fff8f', '#ff8f8f', '#ffd88f'];
     allowPlay = true;
     allowInput = false;
+
     constructor() {
         $('#playBtn').removeClass("btn btn-secondary").addClass('btn btn-success');
-        //console.log("Game created");
         this.colorBlind = false;
         this.delay = 1000;
-        this.sequence = [this.getRandomInt(0,3)];
+        this.sequence = [this.getRandomInt(0, 3)];
     }
-    async correct(id){
+
+    async correct(id) {
         this.guessCount++;
-        //console.log(this.guessCount);
-        //console.log((this.sequence.length));
         light.setLightColour("green");
-        if(this.guessCount + 1 === this.sequence.length){
+        if (this.guessCount + 1 === this.sequence.length) {
             doc.currentScore++;
             document.getElementById("currScore").innerText = doc.currentScore;
             light.setLightWhite();
             this.allowInput = false;
             this.allowPlay = true;
-            if(autoPlay){
-                setTimeout(function () {game.playSequence();}, 1000)
+            if (autoPlay) {
+                setTimeout(function () {
+                    game.playSequence();
+                }, 1000)
             }
             $('#playBtn').removeClass("btn btn-secondary").addClass('btn btn-success');
         }
 
         document.getElementById(id).style.backgroundColor = this.coloursHex[id];
-        await this.timeout(300).then(function(){
+        await this.timeout(300).then(function () {
             document.getElementById(id).style.backgroundColor = game.origColors[id];
         });
     }
-    async incorrect(){
+
+    async incorrect() {
         document.getElementById("playBtn").innerText = "Start Game";
         doc.gameOver();
         let counter = 0;
@@ -57,87 +59,74 @@ class Game {
         light.setLightAlert();
         let interval = setInterval(async function () {
             document.getElementById("lightCard").style.backgroundColor = "red";
-            await game.timeout(300).then(function(){document.getElementById("lightCard").style.backgroundColor = "white";});
-            if(counter === 4){
+            await game.timeout(300).then(function () {
+                document.getElementById("lightCard").style.backgroundColor = "white";
+            });
+            if (counter === 4) {
                 clearInterval(interval);
                 light.setLightWhite();
             }
             counter++;
         }, 400);
     }
-    async playSequence(){
+
+    async playSequence() {
         let delay = difficulties[window.localStorage.difficulty];
-        if(this.allowPlay){   //Checks if playing is allowed, this stops the sequence trying to play over itself and
+        if (this.allowPlay) {   //Checks if playing is allowed, this stops the sequence trying to play over itself and
             // stops the user from playing the next sequence without getting the previous one right
             this.allowPlay = false;
             // Change the button to indicate the sequence is playing and button is not clickable
             $('#playBtn').removeClass("btn btn-success").addClass('btn btn-secondary');
             document.getElementById("playBtn").innerText = "Sequence Playing";
             let i = 0;
-            while(i !== this.sequence.length){
-                //console.log(i);
+            while (i !== this.sequence.length) {
                 await this.playNextSequence(i, delay);
-                await this.timeout(100).then(function () {i++});
+                await this.timeout(100).then(function () {
+                    i++
+                });
             }
             //Generate the next number in the sequence
-            this.sequence.push(this.getRandomInt(0,3));
+            this.sequence.push(this.getRandomInt(0, 3));
             this.guessCount = 0;
             document.getElementById("playBtn").innerText = "Next Sequence";
             this.allowInput = true;
         }
     }
-    async playNextSequence(i, delay){
+
+    async playNextSequence(i, delay) {
         let currentNumber = this.getSequence(i);
         light.setLightColour(this.colours[currentNumber]);
         document.getElementById(currentNumber).style.backgroundColor = this.coloursHex[currentNumber];
-        await this.timeout(delay).then(function(){
+        await this.timeout(delay).then(function () {
             document.getElementById(currentNumber).style.backgroundColor = game.origColors[currentNumber];
             light.setLightWhite();
         });
     }
+
     async timeout(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-    getSequence(index){
+
+    getSequence(index) {
         return this.sequence[index];
     }
+
     getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    checkGuess(guess){
+
+    checkGuess(guess) {
         return this.sequence[this.guessCount] == guess;
-    }
-    setColorBlind(setting){
-        this.colorBlind = setting;
-    }
-    setDelay(delay){
-        //Set the delay in seconds to delay in ms
-        this.delay = delay * 1000;
-    }
-    getGuessCount(){
-        return this.guessCount;
-    }
-    setGuessCount(input){
-        this.guessCount = input;
-    }
-    getColorBlind(){
-        return this.colorBlind;
-    }
-    getDelay(){
-        return this.delay;
     }
 }
 
 class Lights{
     URI;
-    originalState;
-    lightColors;
     lightNumber;
     colours;
     constructor(){
-        //console.log("Light created");
         this.lightNumber = 1; //Default light to use
         this.setLabLightURI();
         this.colours = {
@@ -269,12 +258,10 @@ class Document{
         this.previousScore = this.currentScore;
         document.getElementById("prevHighScore").innerText = this.previousScore;
         if(this.sessionHighScore < this.currentScore){
-            console.log("here");
             this.sessionHighScore = this.currentScore;
             document.getElementById("seshHighScore").innerText = this.sessionHighScore;
         }
         if(this.allTimeHighScore < this.currentScore){
-            console.log("here2");
             this.allTimeHighScore = this.currentScore;
             document.getElementById("highScore").innerText = this.allTimeHighScore;
             //Save the new high-score
@@ -284,7 +271,6 @@ class Document{
 }
 
 $( document ).ready(function() {
-    console.log("Form ready");
     light = new Lights();
     game = new Game();
     doc = new Document();
