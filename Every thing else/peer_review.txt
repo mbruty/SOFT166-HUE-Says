@@ -1,0 +1,10 @@
+Peer review:
+
+The layout of the website is very clean and elegant, and draws attention to the main body of the site. And the use of panels to group elements makes it nice and clear what is related to what.
+Further the use of divider lines between elements helps even more to differentiate different items.
+Home, About and Key require more content as they are currently a bit bare at the moment.
+And all pages currently lack a copyright statement.
+Perhaps the Start Game and Game Settings button should be aligned more centrally as it does make the panels contents appear lopsided by being off to the left.
+The small selection of colours makes it ideal for the implementation of colour blind settings, as they will be easily identified.
+Oscar Davies - 10654834
+
