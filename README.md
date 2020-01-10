@@ -74,7 +74,7 @@ The text size isn't as big as it could be for users who are visually impared, bu
 All browsers that can run javascript are supported, Chrome and FireFox have been tested and work as you can see from the video.
 
 ## Wire Frame
-![wire frame]((https://github.com/mbruty/HUE-Says/blob/master/Every%20thing%20else/wireframe.png?raw=true))
+![wire frame](https://github.com/mbruty/HUE-Says/blob/master/Every%20thing%20else/wireframe.png?raw=true)
 
 ## Site Map
 ![site map](https://github.com/mbruty/HUE-Says/blob/master/Every%20thing%20else/sitemap.png?raw=true)
