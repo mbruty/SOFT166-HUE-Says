@@ -71,20 +71,21 @@ Text contrast is very important, it can stop a visually impaired user from using
 The text size isn't as big as it could be for users who are visually impaired, but the website works exactly the same when zoomed in upon.
 
 ### WCAG1.0
-- Guidelline 1: No audio content included, visual assistance couldn't be given as the game wouldn't work if the user is blind,
-- Guidelline 2: Colour only shows form and text is always used aswell as colour.
-- Guidelline 3: Bootstrap default style sheet is used
-- Guidelline 4: Language is clear under explainations, very little understanding of English is needed to operate the game fully.
-- Guidelline 5: All tables transform and stay together upon resizing.
-- Guidelline 6: The whole website has a dynamic style.
-- Guidelline 7: No changes are time-sensitive on the website.
-- Guidelline 8: There are no embeded UI's.
-- Guidelline 9: The website is designed to be used on any computer and browser and can work on phone sized screens too.
-- Guidelline 10: The only text box is empty, how ever has a clear title on what it is used for.
-- Guidelline 11: Template was from Bootstrap which should use W3C guidelines.
-- Guidelline 12: Context is always shown to the user as indicated by the highlited item on the search bar
-- Guidelline 13: Navigation bar is clear and always accessable.
-- Guidelline 14: Lay-out is clear, clean and simple.
+- Guideline 1: No audio content included, visual assistance couldn't be given as the game wouldn't work if the user is blind,
+- Guideline 2: Colour only shows form and text is always used as well as colour.
+- Guideline 3: Bootstrap default style sheet is used
+- Guideline 4: Language is clear under explanations; very little understanding of English is needed to operate the game fully.
+- Guideline 5: All tables transform and stay together upon resizing.
+- Guideline 6: The whole website has a dynamic style.
+- Guideline 7: No changes are time-sensitive on the website.
+- Guideline 8: There are no embedded UI's.
+- Guideline 9: The website is designed to be used on any computer and browser and can work on phone sized screens too.
+- Guideline 10: The only text box is empty, however has a clear title on what it is used for.
+- Guideline 11: Template was from Bootstrap which should use W3C guidelines.
+- Guideline 12: Context is always shown to the user as indicated by the highlighted item on the search bar
+- Guideline 13: Navigation bar is clear and always accessible.
+- Guideline 14: Lay-out is clear, clean and simple.
+
 
 [Guidellines from here](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines)
 ## Supported browsers
