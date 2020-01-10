@@ -69,3 +69,6 @@ No where is colour exclusively used to show the form of a button, it always has 
 Text contrast is very important, it can stop a visually ipared user from using the website out right. Almost all of the text is black on a white background, which is the best contrast possible. Where text is not black-on-white i.e. on buttons, the contrast is taken in to account and is enough to meet standards.
 - Text size
 The text size isn't as big as it could be for users who are visually impared, but the website works exactly the same when zoomed in upon.
+
+## Supported browsers
+All browsers that can run javascript are supported, Chrome and FireFox have been tested and work as you can see from the video.
